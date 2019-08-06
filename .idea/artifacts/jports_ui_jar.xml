@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact name="jports-ui:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jports_ui_jar</output-path>
+    <root id="root">
+      <element id="archive" name="jports-ui.jar">
+        <element id="module-output" name="jports-ui" />
+        <element id="module-output" name="jports" />
+      </element>
+      <element id="directory" name="lib">
+        <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-core:2.11.2" />
+        <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.11.2" />
+        <element id="library" level="project" name="Maven: org.jsoup:jsoup:1.11.3" />
+      </element>
+      <element id="file-copy" path="$PROJECT_DIR$/README.md" />
+      <element id="file-copy" path="$PROJECT_DIR$/LICENSE" />
+    </root>
+  </artifact>
+</component>

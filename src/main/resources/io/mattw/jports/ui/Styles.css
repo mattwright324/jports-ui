@@ -1,0 +1,30 @@
+.btnPrimary { -fx-base: #007bff; -fx-text-fill: #fff; }
+.btnSecondary { -fx-base: #6c757d; -fx-text-fill: #fff; }
+.btnSuccess { -fx-base: #28a745; -fx-text-fill: #fff; }
+.btnDangerLight { -fx-base: derive(#dc3545, 40%); -fx-text-fill: #fff; }
+.btnDanger { -fx-base: #dc3545; -fx-text-fill: #fff; }
+.btnWarning { -fx-base: #ffc107; -fx-text-fill: #212529; }
+.btnInfo { -fx-base: #17a2b8; -fx-text-fill: #fff; }
+.btnLight { -fx-base: #f8f9fa; -fx-text-fill: #212529; }
+.btnDark { -fx-base: #343a40; -fx-text-fill: #fff; }
+.font12 { -fx-font-size: 12; }
+.font14 { -fx-font-size: 14; }
+.font16 { -fx-font-size: 16; }
+.font18 { -fx-font-size: 18; }
+.noRadiusRight {
+    -fx-border-radius: 4 0 0 4;
+    -fx-background-radius: 4 0 0 4;
+}
+.noRadiusLeft {
+    -fx-border-radius: 0 4 4 0;
+    -fx-background-radius: 0 4 4 0;
+}
+.bold { -fx-font-weight: 700; }
+.configTitle {
+    -fx-border-color: transparent transparent #007bff transparent;
+    -fx-border-width: 0 0 4 0;
+}
+.listView .list-cell {
+    -fx-padding: 0;
+    -fx-background-insets: 0;
+}

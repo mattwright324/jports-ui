@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="io.mattw.jports.ui.Main"
+           prefHeight="500.0" prefWidth="400.0">
+
+    <Accordion>
+        <panes>
+            <TitledPane fx:id="configPane" text="Configuration">
+                <content>
+                    <ScrollPane hbarPolicy="NEVER" fitToHeight="true" fitToWidth="true">
+                        <content>
+                            <VBox spacing="10">
+                                <padding>
+                                    <Insets topRightBottomLeft="10"/>
+                                </padding>
+                                <Label text="Address Options" styleClass="configTitle, font18" maxWidth="Infinity"/>
+                                <ComboBox fx:id="addressMethod" maxWidth="Infinity">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Single Address(es)"/>
+                                            <String fx:value="Network Range"/>
+                                            <String fx:value="Endless Increase"/>
+                                            <String fx:value="Endless Decrease"/>
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+
+                                <VBox>
+                                    <VBox fx:id="singleBox" spacing="10">
+                                        <TextField fx:id="singleAddress" text="192.168.0.1"
+                                                   promptText="192.168.0.1,192.168.0.18"/>
+                                    </VBox>
+                                    <VBox fx:id="multiBox" spacing="10" visible="false" managed="false">
+                                        <CheckBox fx:id="cidrFormat" text="CIDR Format" selected="true"/>
+                                        <TextField fx:id="firstAddress" text="192.168.0.0/16"
+                                                   promptText="192.168.0.0/16"/>
+                                        <TextField fx:id="secondAddress" promptText="192.168.0.255" disable="true"/>
+                                    </VBox>
+                                </VBox>
+
+                                <Label text="Scan Options" styleClass="configTitle, font18" maxWidth="Infinity"/>
+                                <ComboBox fx:id="portMethod" maxWidth="Infinity">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Port Range"/>
+                                            <String fx:value="Custom Port(s)"/>
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
+                                <VBox spacing="10">
+                                    <VBox fx:id="portRangeBox" spacing="10" visible="false" managed="false">
+                                        <HBox spacing="10">
+                                            <TextField fx:id="firstPort" text="1" promptText="1" maxWidth="Infinity"/>
+                                            <Label text="–" styleClass="font16"/>
+                                            <TextField fx:id="secondPort" text="1024" promptText="1024"
+                                                       maxWidth="Infinity"/>
+                                        </HBox>
+                                    </VBox>
+                                    <VBox fx:id="customPortBox" spacing="10">
+                                        <TextArea fx:id="customPort" VBox.vgrow="ALWAYS" minHeight="50" wrapText="true"
+                                                  promptText="21, 22, 80, 443, 8080, 8000"
+                                                  text="21, 22, 80, 443, 8080, 8000"/>
+                                    </VBox>
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label text="Timeout (ms)" styleClass="font16" maxWidth="Infinity"
+                                               HBox.hgrow="ALWAYS"/>
+                                        <TextField fx:id="timeout" text="300" promptText="300"/>
+                                    </HBox>
+                                    <HBox spacing="10" alignment="CENTER_LEFT">
+                                        <Label text="Scan Threads" styleClass="font16" maxWidth="Infinity"
+                                               HBox.hgrow="ALWAYS"/>
+                                        <TextField fx:id="threads" text="64" promptText="64"/>
+                                    </HBox>
+                                    <CheckBox fx:id="checkWebPage" text="Check if web-page exists on port open."
+                                              selected="true"/>
+                                </VBox>
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                </content>
+            </TitledPane>
+            <TitledPane fx:id="scanPane" text="Scanner">
+                <content>
+                    <VBox spacing="10">
+                        <padding>
+                            <Insets topRightBottomLeft="10"/>
+                        </padding>
+                        <HBox alignment="CENTER_LEFT">
+                            <Button fx:id="btnStart" text="Start" styleClass="btnPrimary"/>
+                            <Label minWidth="0" prefWidth="0" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="status" text="0.0.0.0:0" styleClass="font16"
+                                   style="-fx-text-fill: lightgray;"/>
+                        </HBox>
+                        <ProgressBar fx:id="scanProgress" prefHeight="30" maxWidth="Infinity" progress="0.0"/>
+                        <ListView fx:id="resultsList" styleClass="listView" VBox.vgrow="ALWAYS">
+                            <contextMenu>
+                                <ContextMenu>
+                                    <items>
+                                        <MenuItem fx:id="menuCopy" text="Copy"/>
+                                    </items>
+                                </ContextMenu>
+                            </contextMenu>
+                        </ListView>
+                    </VBox>
+                </content>
+            </TitledPane>
+        </panes>
+        <expandedPane>
+            <fx:reference source="configPane"/>
+        </expandedPane>
+    </Accordion>
+</StackPane>
