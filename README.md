@@ -9,11 +9,11 @@ Portable, fast, multithreaded port scanning tool in JavaFX.
 ## Features
 Simple scanning with many options.
 - Scan addresses many ways
-  - Single address `(x.x.x.x)`
-  - Address range `(x.x.x.x - x.y.y.y)`
-  - CIDR `(x.x.x.x/yy)`
-  - Endless increase `(x.x.x.x -> ...)`
-  - Endless decrease `(... <- x.x.x.x)`
+  - Single address(es) `x.x.x.x` or `x.x.x.x, x.x.y.y, x.x.y.z`
+  - Address range `x.x.x.x - x.y.y.y`
+  - CIDR `x.x.x.x/yy`
+  - Endless increase `x.x.x.x -> ...`
+  - Endless decrease `... <- x.x.x.x`
 - Multiple options for ports
   - Custom list of ports
   - Port range
