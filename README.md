@@ -1,7 +1,10 @@
 # jports-ui
 Portable, fast, multithreaded port scanning tool in JavaFX.
 
-![](https://i.imgur.com/H45pIAb.png)
+![GitHub latest release](https://img.shields.io/github/release/mattwright324/jports-ui.svg?style=flat-square)
+![Github total download](https://img.shields.io/github/downloads/mattwright324/jports-ui/total?style=flat-square)
+
+![preview](https://i.imgur.com/H45pIAb.png)
 
 ## Features
 Simple scanning with many options.
