@@ -8,6 +8,7 @@ Portable, fast, multithreaded port scanning tool in JavaFX.
 
 ## Features
 Simple scanning with many options.
+- Java 8
 - Scan addresses many ways
   - Single address(es) `x.x.x.x` or `x.x.x.x, x.x.y.y, x.x.y.z`
   - Address range `x.x.x.x - x.y.y.y`
