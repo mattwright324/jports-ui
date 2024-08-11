@@ -1,22 +1,32 @@
-# jports-ui
-Portable, fast, multithreaded port scanning tool in JavaFX.
+# jWHOIS
 
-![GitHub latest release](https://img.shields.io/github/release/mattwright324/jports-ui.svg?style=flat-square)
-![Github total download](https://img.shields.io/github/downloads/mattwright324/jports-ui/total?style=flat-square)
+Swing desktop application to make quick WHOIS info lookups for domains and IP addresses.
 
-![preview](https://i.imgur.com/H45pIAb.png)
+![GitHub latest release](https://img.shields.io/github/release/mattwright324/jwhois.svg?style=flat-square)
+![Github total download](https://img.shields.io/github/downloads/mattwright324/jwhois/total?style=flat-square)
 
-## Features
-Simple scanning with many options.
-- Java 8
-- Scan addresses many ways
-  - Single address(es) `x.x.x.x` or `x.x.x.x, x.x.y.y, x.x.y.z`
-  - Address range `x.x.x.x - x.y.y.y`
-  - CIDR `x.x.x.x/yy`
-  - Endless increase `x.x.x.x -> ...`
-  - Endless decrease `... <- x.x.x.x`
-- Multiple options for ports
-  - Custom list of ports
-  - Port range
-  - Optionally check open address:port for webpages
-- Finds logged to log file with extra detail (page title, page size)
+<img src="https://i.imgur.com/EEaXkR5.png" width="700" />
+
+- Recursively WHOIS queries responses from lookup servers until the final result is returned
+- Lookup domains for registration info or ip addresses for netrange info
+- Configurable initial lookup server for edge cases I may not have handled
+
+### Requirements
+
+- Java 11
+
+### Build and Run
+
+During development, run the following command to build and run the application.
+
+```sh
+$ ./gradlew run
+```
+
+### Package
+
+Before a release, run the following command to package the files into the `build/package/` folder to be zipped up.
+
+```sh
+$ ./gradlew packageJar
+```

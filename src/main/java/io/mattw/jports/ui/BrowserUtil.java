@@ -1,5 +1,8 @@
 package io.mattw.jports.ui;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.awt.*;
 import java.net.URL;
 
@@ -7,6 +10,8 @@ import java.net.URL;
  * Opens URLs on the system.
  */
 public class BrowserUtil {
+
+    private static final Logger logger = LogManager.getLogger();
 
     public BrowserUtil() {}
 
@@ -17,16 +22,16 @@ public class BrowserUtil {
     public void open(String link) {
         link = link.replace(" ", "%20");
         try {
-            URL url = new URL(link);
+            var url = new URL(link);
             if (Desktop.isDesktopSupported()) {
-                Desktop desktop = Desktop.getDesktop();
+                var desktop = Desktop.getDesktop();
                 desktop.browse(url.toURI());
             } else {
                 Runtime runtime = Runtime.getRuntime();
                 runtime.exec("xdg-open "+url.getPath());
             }
-        } catch (Throwable e2) {
-            e2.printStackTrace();
+        } catch (Throwable e) {
+            logger.warn("Failed to open URL in default browser [link={}]", link, e);
         }
     }
 }
